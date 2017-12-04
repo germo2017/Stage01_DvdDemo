@@ -1,4 +1,7 @@
 package com.bean.demo;
+
+import java.io.Serializable;
+
 /**
  * 
  * @ClassName:	 User.java
@@ -9,7 +12,12 @@ package com.bean.demo;
  * @date	2017年11月16日下午7:37:03
  * @version	1.0
  */
-public class User {
+public class User implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1904979311752865745L;
 	private int userId;	
 	private String userAccount;	
 	private String userNickname;

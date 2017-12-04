@@ -40,9 +40,10 @@ public class DBHelper {
 			if(mConnection == null) {
 				mConnection = DriverManager.getConnection(URL, USER, PWD);
 			}			
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		//	System.out.println("fsag0");
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}		
 		return mConnection;
 		
@@ -50,13 +51,16 @@ public class DBHelper {
 	public static void main(String[] args) {
 		DBHelper db = new DBHelper();
 		ArrayList<User> array = new ArrayList<>();
+	//	System.out.println(db.getConnection()!=null);//测试发现成功建立连接
 		//第二步:预处理准备连接,负责执行sql语句
 		try {
 			Connection conn = db.getConnection();
-			PreparedStatement ps = conn.prepareStatement("select * from DVD_USER");
+			PreparedStatement ps = conn.prepareStatement("select * from DVD_USER");//ps不为null
 			ResultSet rs = ps.executeQuery();//查询
+			//System.out.println(rs==null);//rs不为null
 			ps.executeUpdate();//增删改
-			System.out.println("fsag1");
+			System.out.println("rs后,rs.next()前");//执行
+			//System.out.println(rs.next());//rs.next()=false
 			while(rs.next()) {
 				User u = new User();
 				u.setUserAccount(rs.getString("USERACCOUNT"));
@@ -68,11 +72,11 @@ public class DBHelper {
 				u.setUserPermission(rs.getInt("权限"));
 				array.add(u);
 				System.out.println(u.toString());
-				System.out.println("fsag2");
+				System.out.println("fsag13");//未执行
+				
 			}
 		
 		} catch (SQLException e) {
-		//	System.out.println("fsag3");
 			e.printStackTrace();			
 		}
 		for (User user : array) {
