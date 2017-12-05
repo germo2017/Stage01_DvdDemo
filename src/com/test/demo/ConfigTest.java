@@ -1,23 +1,15 @@
-package com.daoImpl;
+package com.test.demo;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.Properties;
 
-public class DBHelper {
-	private String driver = null;
-	private String url = null;
-	private String user = null;
-	private String pwd = null;
-	Connection mConnection;
-	
-	public Connection getConnection() {
+public class ConfigTest {
+
+	public static void main(String[] args) {
 		
 		try {
 			//1. 构建Properties对象
@@ -29,10 +21,10 @@ public class DBHelper {
 			//4. 加载流对象
 			p.load(is);
 			//5. 从文件中获取内容
-			driver = p.getProperty("DRIVER");
-			url = p.getProperty("URL");
-			user = p.getProperty("USER");
-			pwd = p.getProperty("PWD");
+			String driver = p.getProperty("DRIVER");
+			String url = p.getProperty("URL");
+			String user = p.getProperty("USER");
+			String pwd = p.getProperty("PWD");
 			
 			System.out.println("Driver:\t" + driver);
 			System.out.println("URL:\t" + url);
@@ -45,19 +37,9 @@ public class DBHelper {
 			e.printStackTrace();
 		}
 		
-		if(mConnection == null) {
-			try {
-				Class.forName(driver);
-				mConnection = DriverManager.getConnection(url, user, pwd);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
 		
-		return mConnection;
+		
+		
 	}
-	
-	
+
 }

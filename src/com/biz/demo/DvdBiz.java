@@ -11,11 +11,12 @@ package com.biz.demo;
  */
 public interface DvdBiz {
 	//增删改查
+	public void showDvd();//显示可借DVD和已借出DVD
 	public void addDvd();	
 	public void searchDvd();	
 	public void deleteDvd();
 	public void reviseDvd();//修改Dvd信息
 	public void lendDvd();
 	public void returnDvd();
-	public void showDvd();//显示热度排行
+	public void showHotDvd();//显示热度排行
 }

@@ -19,7 +19,7 @@ public class Dvd {
 	private int dvdLendCount;
 	//private String dvdLendDate;
 	private boolean dvdStatus;
-	private Date dvdArrivalDate;
+	private String dvdLendDate;
 	
 	public int getDvdId() {
 		return dvdId;
@@ -45,37 +45,38 @@ public class Dvd {
 	public void setDvdStatus(boolean dvdStatus) {
 		this.dvdStatus = dvdStatus;
 	}
-	public Date getDvdArrivalDate() {
-		return dvdArrivalDate;
+	
+	public String getDvdLendDate() {
+		return dvdLendDate;
 	}
-	public void setDvdArrivalDate(Date dvdArrivalDate) {
-		this.dvdArrivalDate = dvdArrivalDate;
+	public void setDvdLendDate(String string) {
+		this.dvdLendDate = string;
 	}
 	
-	public Dvd(int dvdId, String dvdName, int dvdLendCount, boolean dvdStatus, Date dvdArrivalDate) {
+	public Dvd(int dvdId, String dvdName, int dvdLendCount, boolean dvdStatus, String dvdLendDate) {
 		super();
 		this.dvdId = dvdId;
 		this.dvdName = dvdName;
 		this.dvdLendCount = dvdLendCount;
 		this.dvdStatus = dvdStatus;
-		this.dvdArrivalDate = dvdArrivalDate;
+		this.dvdLendDate = dvdLendDate;
 	}
 	public Dvd() {
 		super();
 	}	
 	
-	public Dvd(String dvdName, int dvdLendCount, boolean dvdStatus, Date dvdArrivalDate) {
+	public Dvd(String dvdName, int dvdLendCount, boolean dvdStatus, String dvdLendDate) {
 		super();
 		this.dvdName = dvdName;
 		this.dvdLendCount = dvdLendCount;
 		this.dvdStatus = dvdStatus;
-		this.dvdArrivalDate = dvdArrivalDate;
+		this.dvdLendDate = dvdLendDate;
 	}
 	
 	@Override
 	public String toString() {
 		return "Dvd [dvdID=" + dvdId + ", dvdName=" + dvdName + ", dvdLendCount=" + dvdLendCount + ", dvdStatus="
-				+ dvdStatus + ", dvdArrivalDate=" + dvdArrivalDate + "]";
+				+ dvdStatus + ", dvdLendDate=" + dvdLendDate + "]";
 	}
 	
 	

@@ -1,7 +1,7 @@
 /**
  * 
  * @Title: showView 
- * @Description: TODO(该包是对集合的操作接口) 
+ * @Description: TODO(该包是对集合的操作接口,主要是数据库操作) 
  * @param @return  参数说明 
  * @return View    返回类型 
  * @throws
