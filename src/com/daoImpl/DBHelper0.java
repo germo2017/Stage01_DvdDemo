@@ -65,9 +65,9 @@ public class DBHelper0 {
 				User u = new User();
 				u.setUserAccount(rs.getString("USERACCOUNT"));
 				u.setUserId(rs.getInt("USERID"));
-				u.setUserNickname(rs.getString("USERNICKNAME"));
+				u.setUserNickName(rs.getString("USERNICKNAME"));
 				u.setUserPwd(rs.getString("USERPWD"));
-				u.setUserPwdTip(rs.getString("USERPWDTIPS"));
+				u.setUserPwdTips(rs.getString("USERPWDTIPS"));
 				u.setUserStatus((rs.getInt("USERSTATE")>=1)?true:false);
 				u.setUserPermission(rs.getInt("х╗оч"));
 				array.add(u);

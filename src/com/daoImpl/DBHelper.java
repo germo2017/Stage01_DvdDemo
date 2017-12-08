@@ -33,12 +33,12 @@ public class DBHelper {
 			url = p.getProperty("URL");
 			user = p.getProperty("USER");
 			pwd = p.getProperty("PWD");
-			
+			/*
 			System.out.println("Driver:\t" + driver);
 			System.out.println("URL:\t" + url);
 			System.out.println("USER:\t" + user);
 			System.out.println("PWD:\t" + pwd);
-		
+			 */
 		} catch (FileNotFoundException e) {			
 			e.printStackTrace();
 		} catch (IOException e) {			

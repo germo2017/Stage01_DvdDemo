@@ -12,10 +12,10 @@ package com.biz.demo;
 public interface DvdBiz {
 	//增删改查
 	public void showDvd();//显示可借DVD和已借出DVD
-	public void addDvd();	
+	public void addDvd();	//----管理员权限
 	public void searchDvd();	
-	public void deleteDvd();
-	public void reviseDvd();//修改Dvd信息
+	public void deleteDvd();//----管理员权限
+	public void reviseDvd();//---管理员权限,修改Dvd信息
 	public void lendDvd();
 	public void returnDvd();
 	public void showHotDvd();//显示热度排行

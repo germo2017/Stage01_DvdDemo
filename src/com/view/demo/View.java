@@ -1,4 +1,7 @@
 package com.view.demo;
+
+import java.text.ParseException;
+
 /**
  * 
  * @ClassName:	 View.java
@@ -14,6 +17,7 @@ public abstract class View {
 	/**
 	 * 
 	 * @return
+	 * @throws ParseException 
 	 */
 	public abstract View showView();
 }
